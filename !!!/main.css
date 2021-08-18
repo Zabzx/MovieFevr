@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+/*Global*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+}
+.container{
+    width: 75%;
+    margin: 0 auto;
+}
+/*Header*/
+header{
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    align-items: center;
+}
+.logo{
+    display: flex;
+    align-items: center;
+}
+header h1{
+    margin-left: 25px;
+}
+header i{
+    font-size: 45px;
+}
+.logo-span{
+    color: #2340D6;
+}
+.about a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+/*Intro*/
+#intro{
+    margin-top: 40px;
+    text-align: center;
+    font-size: 22px;
+}
+
+/*Search and Submit*/
+#search-and-submit{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+#search-and-submit input{
+    border-radius: 50px;
+    border: 1px solid black;
+    padding: 5px 5px 5px 10px;
+    font-size: 25px;
+}
+#submit-btn button{
+    background-color: #2340D6;
+    color: white;
+    padding: 5px 10px 5px 10px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/*Movie Data*/
+#movie-card{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 60px;
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+#movie-card img{
+    height: 300px;
+}
+.movie-title{
+    font-size: 40px;
+}
+.movie-desc{
+    margin-top: 20px;
+    font-size: 20px;
+}
+.extra-info{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    font-size: 15px;
+}
+/*Modal*/
+#modal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 20px;
+    padding: 30px;
+    background-color: white;
+    transition:cubic-bezier(0.39, 0.575, 0.565, 1) 0.3s;
+    z-index: 1;
+}
+.modal-heading{
+    text-align: right;
+    font-size: 40px;
+}
+#close-btn{
+    position: absolute;
+    top: 0;
+    right: -30%;
+    color: white;
+    cursor: pointer;
+}
+.modal-data{
+    text-align: center;
+}
+.modal-title{
+    margin-top: 15px;
+}
+.modal-info{
+    line-height: 30px;
+}
+.modal-text{
+    text-align: center;
+    font-size: 20px;
+}
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: black;
+    opacity: .7;
+    display: none;
+    z-index: 0;
+}
+/*Active classes*/
+#modal.active{
+    transform: translate(-50%, -50%) scale(1);
+}
+.overlay.overlay-active{
+    display: block;
+}

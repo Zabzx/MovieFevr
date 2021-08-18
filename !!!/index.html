@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <title>MovieFevr | Search</title>
+</head>
+<body>
+    <header class="container">
+        <div class="logo">
+            <i class="fas fa-film"></i>
+            <h1>Movie<span class="logo-span">Fevr</span></h1>
+        </div>
+        <div class="about">
+            <a href="#">About</a>
+        </div>
+    </header>
+    
+    <section id="intro">
+        <p>Search for a move or TV series to recive data like ratings, actors, years, seasons etc</p>
+    </section>
+
+    <section id="search-and-submit" class="container">
+        <input type="text" placeholder="enter a movie or show" class="user-input">
+        <div id="submit-btn">
+            <button class="search-btn">Search</button>
+        </div>
+    </section>
+
+    <section id="movie-card">
+        <img src="images/placeholder.jpg" alt="" id="movie-image">
+        <h1 class="movie-title"></h1>
+        <p class="movie-desc"></p>
+
+        <div class="extra-info">
+            <p id="year"></p>
+            <p id="actors"></p>
+            <p id="rating"></p>
+        </div>
+    </section>
+
+    <section id="modal">
+        <div class="modal-heading"><i class="fas fa-times" id="close-btn"></i></div>
+        <div class="modal-data">
+            <img src="images/placeholder.jpg" alt="" class="modal-image">
+            <div class="modal-text">
+                <div class="modal-title">
+                    <h1>Sample Title</h1>
+                </div>
+            <div class="modal-info">
+                <p class="genre"></p>
+                <p class="type"></p>
+                <p class="rated"></p>
+                <p class="runtime"></p>
+            </div>
+        </div>
+        </div>
+    </section>
+    <button class="test">test</button>
+    <div class="overlay"></div>
+    <script src="main.js"></script>
+</body>
+</html>
