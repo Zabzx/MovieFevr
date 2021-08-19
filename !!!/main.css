@@ -95,6 +95,20 @@ header i{
     margin-top: 30px;
     font-size: 15px;
 }
+.btn-container{
+    display: flex;
+    justify-content: center;
+}
+.read-more{
+    background-color: #2340D6;
+    padding: 10px 20px 10px 20px;
+    margin-top: 20px;
+    color: white;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+}
 /*Modal*/
 #modal{
     position: absolute;
@@ -131,6 +145,7 @@ header i{
     text-align: center;
     font-size: 20px;
 }
+
 .overlay{
     position: absolute;
     top: 0;
