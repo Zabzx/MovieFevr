@@ -1,12 +1,14 @@
-//Main screen
+//Main screen selectors
 const searchBtn = document.querySelector('.search-btn');
+const movieCard = document.querySelector('#movie-card');
 let movieImage = document.querySelector('#movie-image');
 let movieTitle = document.querySelector('.movie-title');
 let movieDescription = document.querySelector('.movie-desc');
 let movieYear = document.getElementById('year');
 let movieActors = document.getElementById('actors');
 let movieRating = document.getElementById('rating');
-//Modal screen
+
+//Modal screen selectors
 const modal = document.getElementById('modal');
 const modalImage = document.querySelector('.modal-image');
 const modalTitle = document.querySelector('.modal-title h1');
@@ -16,13 +18,18 @@ const modalRated = document.querySelector('.rated');
 const modalRuntime = document.querySelector('.runtime');
 const overlay = document.querySelector('.overlay');
 const modalCloseButton = document.getElementById('close-btn');
-const test = document.querySelector('.test').addEventListener('click', openModal);
+const readMore = document.querySelector('.read-more');
 
+
+//Events
 searchBtn.addEventListener('click', fetchData);
+readMore.addEventListener('click',openModal)
 overlay.addEventListener('click', removeModal);
 modalCloseButton.addEventListener('click', removeModal);
 
 
+
+//Functions
 function openModal(){
     modal.classList.add('active');
     overlay.classList.add('overlay-active');
@@ -36,12 +43,16 @@ function removeModal(){
 }
 
 function fetchData(){
+
+    readMore.style.display = 'block';
+
     const userInputValue = document.querySelector('.user-input').value;
 
     fetch(`http://www.omdbapi.com/?t=${userInputValue}&apikey=9fabedf7`)
     .then(res => res.json())
     .then(data => {
-        console.log(data)
+
+        //Display Data to the main screen
         movieImage.src = data.Poster;
         movieTitle.textContent = data.Title;
         movieDescription.textContent = data.Plot;
@@ -56,6 +67,6 @@ function fetchData(){
         modalType.textContent = `Type: ${data.Type}`;
         modalRated.textContent = `Rated: ${data.Rated}`;
         modalRuntime.textContent = `Runtime: ${data.Runtime}`;
-        console.log(movieRating)
     })
 }
+
