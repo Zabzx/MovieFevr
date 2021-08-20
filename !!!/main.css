@@ -36,8 +36,11 @@ header i{
     text-decoration: none;
     color: black;
     font-size: 20px;
+    transition: 0.3s;
 }
-
+.about a:hover{
+    color: #2340D6
+}
 /*Intro*/
 #intro{
     margin-top: 40px;
@@ -61,10 +64,15 @@ header i{
 #submit-btn button{
     background-color: #2340D6;
     color: white;
-    padding: 5px 10px 5px 10px;
+    padding: 10px 15px 10px 15px;
     border: none;
+    border-radius: 10px;
     font-size: 20px;
     cursor: pointer;
+    transition: 0.3s;
+}
+#submit-btn button:hover{
+    border-radius: 0px;
 }
 
 /*Movie Data*/
@@ -79,11 +87,16 @@ header i{
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
 }
+.error-message{
+    color: red;
+    font-size: 30px;
+}
 #movie-card img{
     height: 300px;
 }
 .movie-title{
     font-size: 40px;
+    color: #2340D6;
 }
 .movie-desc{
     margin-top: 20px;
@@ -132,11 +145,10 @@ header i{
     color: white;
     cursor: pointer;
 }
-.modal-data{
-    text-align: center;
-}
+
 .modal-title{
     margin-top: 15px;
+    color: #2340D6;
 }
 .modal-info{
     line-height: 30px;
