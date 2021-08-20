@@ -1,6 +1,7 @@
 //Main screen selectors
 const searchBtn = document.querySelector('.search-btn');
 const movieCard = document.querySelector('#movie-card');
+const errorMessage = document.querySelector('.error-message');
 let movieImage = document.querySelector('#movie-image');
 let movieTitle = document.querySelector('.movie-title');
 let movieDescription = document.querySelector('.movie-desc');
@@ -26,6 +27,11 @@ searchBtn.addEventListener('click', fetchData);
 readMore.addEventListener('click',openModal)
 overlay.addEventListener('click', removeModal);
 modalCloseButton.addEventListener('click', removeModal);
+window.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter'){
+        fetchData();
+    }
+})
 
 
 
@@ -48,10 +54,33 @@ function fetchData(){
 
     const userInputValue = document.querySelector('.user-input').value;
 
-    fetch(`http://www.omdbapi.com/?t=${userInputValue}&apikey=9fabedf7`)
+    if (userInputValue === ''){
+        errorMessage.textContent = 'Please enter a value';
+        readMore.style.display = 'none';
+        return
+        
+    } else {
+        errorMessage.textContent = '';
+    }
+
+    fetch(`https://www.omdbapi.com/?t=${userInputValue}&apikey=9fabedf7`)
     .then(res => res.json())
     .then(data => {
 
+        if (data.Error === 'Movie not found!'){
+            errorMessage.textContent = 'There was an error. Please check your entry and try again.';
+
+            movieYear.style.display = 'none'
+            movieActors.style.display = 'none'
+            movieRating.style.display = 'none'
+            readMore.style.display = 'none';
+        } else {
+            movieYear.style.display = 'block'
+            movieActors.style.display = 'block'
+            movieRating.style.display = 'block'
+            readMore.style.display = 'block'
+        }
+        
         //Display Data to the main screen
         movieImage.src = data.Poster;
         movieTitle.textContent = data.Title;
@@ -69,4 +98,3 @@ function fetchData(){
         modalRuntime.textContent = `Runtime: ${data.Runtime}`;
     })
 }
-
