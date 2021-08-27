@@ -22,6 +22,12 @@ const modalCloseButton = document.getElementById('close-btn');
 const readMore = document.querySelector('.read-more');
 
 
+
+
+
+
+
+
 //Events
 searchBtn.addEventListener('click', fetchData);
 readMore.addEventListener('click',openModal)
@@ -32,6 +38,11 @@ window.addEventListener('keydown', (e) => {
         fetchData();
     }
 })
+
+
+
+
+
 
 
 
@@ -98,3 +109,24 @@ function fetchData(){
         modalRuntime.textContent = `Runtime: ${data.Runtime}`;
     })
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
