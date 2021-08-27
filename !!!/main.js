@@ -50,7 +50,6 @@ window.addEventListener('keydown', (e) => {
 function openModal(){
     modal.classList.add('active');
     overlay.classList.add('overlay-active');
-    //Put fetch data into the modal
     
 }
 
@@ -79,6 +78,7 @@ function fetchData(){
     .then(data => {
 
         if (data.Error === 'Movie not found!'){
+            //Handling errors
             errorMessage.textContent = 'There was an error. Please check your entry and try again.';
 
             movieYear.style.display = 'none'
@@ -109,24 +109,3 @@ function fetchData(){
         modalRuntime.textContent = `Runtime: ${data.Runtime}`;
     })
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
