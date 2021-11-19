@@ -1,2 +1,2 @@
 # MovieFevr
-Movie app that uses an API to display data on movies and TV shows.
+My first JavaScript project where I get data from an API and display it on the page. I redid it using react.
